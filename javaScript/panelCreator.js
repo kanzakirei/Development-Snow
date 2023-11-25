@@ -1,7 +1,7 @@
 function createList(_json) {
 	let target = document.getElementById("panelList");
 	let openDiv = document.createElement("div");
-	openDiv.classList.add("line");
+	target.appendChild(openDiv);
 	let closeDiv = document.createElement("div");
 	target.appendChild(closeDiv);
 	let openDivs = {};
