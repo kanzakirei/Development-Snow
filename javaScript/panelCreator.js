@@ -1,8 +1,10 @@
 function createList(_json) {
 	let target = document.getElementById("panelList");
 	let openDiv = document.createElement("div");
+	openDiv.classList.add("line");
 	target.appendChild(openDiv);
 	let closeDiv = document.createElement("div");
+	closeDiv.classList.add("line");
 	target.appendChild(closeDiv);
 	let openDivs = {};
 	let closeDivs = {};
@@ -15,14 +17,16 @@ function createList(_json) {
 		if (openDate > currentDate || currentDate > closeDate) {
 			if(!closeDivs[area]) {
 		 		closeDivs[area] = document.createElement("div");
-				closeDiv.appendChild(closeDivs[area]);
+					closeDivs[area].classList.add("line");
+					closeDiv.appendChild(closeDivs[area]);
 			}
 			createFrame(openDate, closeDate, closeDivs[area], `${data.name}\n(${data.open} ~ ${data.close})`, data.url);
 		}
 		else {
 			if(!openDivs[area]) {
 		 		openDivs[area] = document.createElement("div");
-				openDiv.appendChild(openDivs[area]);
+					openDivs[area].classList.add("line");
+					openDiv.appendChild(openDivs[area]);
  			}
 			createFrame(openDate, closeDate, openDivs[area], `${data.name}\n(${data.open} ~ ${data.close})`, data.url);
 		}
