@@ -2,10 +2,9 @@ function createList(_json) {
 	let target = document.getElementById("panelList");
 	let openDiv = document.createElement("details");
 	openDiv.open = true;
+	target.appendChild(openDiv);
 	let closeDiv = document.createElement("details");
 	closeDiv.open = true;
-	closeDiv.addElement("open");
-	target.appendChild(openDiv);
 	target.appendChild(closeDiv);
 	let openDivs = {};
 	let closeDivs = {};
