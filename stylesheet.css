@@ -46,6 +46,13 @@ html {
   text-align: center;
 }
 
+.line {
+  width: 100%;
+  border-bottom: 2px solid #292929;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
 .frame {
   width: 800px;
   display: inline-block;
