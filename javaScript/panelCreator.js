@@ -37,15 +37,16 @@ function createFrame(_openDate, _closeDate, _parent, _name, _url) {
 	div.classList.add("frame");
 	_parent.appendChild(div);
 
-	createName(_openDate, _closeDate, div, _name);
+	createName(_openDate, _closeDate, div, _name, _url);
 	if (_url) {
 		createIframeBlock(div, _url);
 	}
 }
 
-function createName(_openDate, _closeDate, _parent, _name) {
-	let p = document.createElement("p");
+function createName(_openDate, _closeDate, _parent, _name, _url) {
+	let p = document.createElement("a");
 	p.innerText = _name;
+	p.href = _url;
 	var currentDate = new Date();
 	if (_openDate > currentDate || currentDate > _closeDate) {
 		p.classList.add("color_red");
